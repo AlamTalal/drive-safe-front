@@ -1,0 +1,25 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Land */
+.icon > svg > path:nth-of-type(1) {
+  fill: var(--globe-land-clr)
+}
+
+/* Lines */
+.icon > svg > path:nth-of-type(2) {
+  fill: var(--globe-lines-clr);
+}
+
+/* Water */
+.icon > svg > path:nth-of-type(3) {
+  fill: var(--globe-water-clr);
+}
+
+/* Circle */
+.icon > svg > path:nth-of-type(4) {
+  fill: var(--globe-lines-clr);
+}

@@ -1,0 +1,297 @@
+@import url(./assets/fonts/fonts.css);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ *  sm: 640px
+ *  md: 768px
+ *  lg: 1024px
+ *  xl: 1280px
+ * 2xl: 1536px
+ * @media (min-width: 1536px)
+ */
+
+/* @media (prefers-color-scheme: dark) {"#f7f7f7"} */
+
+/* 
+	padding: var(--blockPadding) max(2rem, 50vw - var(--contentWidth) / 2); 
+	line-height: calc(1.3em + (1.5 - 1.3) * ((100vw - 21em)/(35 - 21)));
+	width: max(45ch, 50%);
+	width: min(75ch, 50%);. This essentially sets a "max" size by using the min() function*/
+
+/* 
+html, body {
+	scroll-snap-type: y mandatory
+}
+.child {
+	scroll-snap-align: start
+}
+
+margin-inline: auto;
+
+trick to convert calculation to 10 based system
+:root {
+	font-size: 62.5%; --> 10px 
+}
+body {
+	get the font back to 16px
+	font-size: 1.6 rem
+}
+ */
+:root {
+
+	--clr-transparent: hsla(0, 0%, 0%, 0);
+
+	--clr-blue-00: hsla(190, 55%, 95%, 1);
+	--clr-blue-01: hsla(190, 55%, 90%, 1);
+	--clr-blue-02: hsla(190, 55%, 85%, 1);
+	--clr-blue-03: hsla(190, 55%, 80%, 1);
+	--clr-blue-04: hsla(190, 55%, 75%, 1);
+	--clr-blue-05: hsla(190, 55%, 70%, 1);
+	--clr-blue-06: hsla(190, 55%, 65%, 1);
+	--clr-blue-07: hsla(190, 55%, 60%, 1);
+	--clr-blue-08: hsla(190, 55%, 55%, 1);
+	--clr-blue-09: hsla(190, 55%, 50%, 1);
+	--clr-blue-10: hsla(190, 55%, 45%, 1);
+	--clr-blue-11: hsla(190, 55%, 40%, 1);
+	--clr-blue-12: hsla(190, 55%, 35%, 1);
+	--clr-blue-13: hsla(190, 55%, 30%, 1);
+	--clr-blue-14: hsla(190, 55%, 25%, 1);
+	--clr-blue-15: hsla(190, 55%, 20%, 1);
+	--clr-blue-16: hsla(190, 55%, 15%, 1);
+	--clr-blue-17: hsla(190, 55%, 10%, 1);
+	--clr-blue-18: hsla(190, 55%, 05%, 1);
+	
+	--clr-yellow-00: hsla(50, 70%, 95%, 1);
+	--clr-yellow-01: hsla(50, 70%, 90%, 1);
+	--clr-yellow-02: hsla(50, 70%, 85%, 1);
+	--clr-yellow-03: hsla(50, 70%, 80%, 1);
+	--clr-yellow-04: hsla(50, 70%, 75%, 1);
+	--clr-yellow-05: hsla(50, 70%, 70%, 1);
+	--clr-yellow-06: hsla(50, 70%, 65%, 1);
+	--clr-yellow-07: hsla(50, 70%, 60%, 1);
+	--clr-yellow-08: hsla(50, 70%, 55%, 1);
+	--clr-yellow-09: hsla(50, 70%, 50%, 1);
+	--clr-yellow-10: hsla(50, 70%, 45%, 1);
+	--clr-yellow-11: hsla(50, 70%, 40%, 1);
+	--clr-yellow-12: hsla(50, 70%, 35%, 1);
+	--clr-yellow-13: hsla(50, 70%, 30%, 1);
+	--clr-yellow-14: hsla(50, 70%, 25%, 1);
+	--clr-yellow-15: hsla(50, 70%, 20%, 1);
+	--clr-yellow-16: hsla(50, 70%, 15%, 1);
+	--clr-yellow-17: hsla(50, 70%, 10%, 1);
+	--clr-yellow-18: hsla(50, 70%, 05%, 1);
+	
+	--clr-red-00: hsla(0, 50%, 95%, 1);
+	--clr-red-01: hsla(0, 50%, 90%, 1);
+	--clr-red-02: hsla(0, 50%, 85%, 1);
+	--clr-red-03: hsla(0, 50%, 80%, 1);
+	--clr-red-04: hsla(0, 50%, 75%, 1);
+	--clr-red-05: hsla(0, 50%, 70%, 1);
+	--clr-red-06: hsla(0, 50%, 65%, 1);
+	--clr-red-07: hsla(0, 50%, 60%, 1);
+	--clr-red-08: hsla(0, 50%, 55%, 1);
+	--clr-red-09: hsla(0, 50%, 50%, 1);
+	--clr-red-10: hsla(0, 50%, 45%, 1);
+	--clr-red-11: hsla(0, 50%, 40%, 1);
+	--clr-red-12: hsla(0, 50%, 35%, 1);
+	--clr-red-13: hsla(0, 50%, 30%, 1);
+	--clr-red-14: hsla(0, 50%, 25%, 1);
+	--clr-red-15: hsla(0, 50%, 20%, 1);
+	--clr-red-16: hsla(0, 50%, 15%, 1);
+	--clr-red-17: hsla(0, 50%, 10%, 1);
+	--clr-red-18: hsla(0, 50%, 05%, 1);
+	
+	--clr-green-00: hsla(140, 50%, 95%, 1);
+	--clr-green-01: hsla(140, 50%, 90%, 1);
+	--clr-green-02: hsla(140, 50%, 85%, 1);
+	--clr-green-03: hsla(140, 50%, 80%, 1);
+	--clr-green-04: hsla(140, 50%, 75%, 1);
+	--clr-green-05: hsla(140, 50%, 70%, 1);
+	--clr-green-06: hsla(140, 50%, 65%, 1);
+	--clr-green-07: hsla(140, 50%, 60%, 1);
+	--clr-green-08: hsla(140, 50%, 55%, 1);
+	--clr-green-09: hsla(140, 50%, 50%, 1);
+	--clr-green-10: hsla(140, 50%, 45%, 1);
+	--clr-green-11: hsla(140, 50%, 40%, 1);
+	--clr-green-12: hsla(140, 50%, 35%, 1);
+	--clr-green-13: hsla(140, 50%, 30%, 1);
+	--clr-green-14: hsla(140, 50%, 25%, 1);
+	--clr-green-15: hsla(140, 50%, 20%, 1);
+	--clr-green-16: hsla(140, 50%, 15%, 1);
+	--clr-green-17: hsla(140, 50%, 10%, 1);
+	--clr-green-18: hsla(140, 50%, 05%, 1);
+	
+	--clr-neutral-00: hsla(190, 5%, 95%, 1);
+	--clr-neutral-01: hsla(190, 5%, 90%, 1);
+	--clr-neutral-02: hsla(190, 5%, 85%, 1);
+	--clr-neutral-03: hsla(190, 5%, 80%, 1);
+	--clr-neutral-04: hsla(190, 5%, 75%, 1);
+	--clr-neutral-05: hsla(190, 5%, 70%, 1);
+	--clr-neutral-06: hsla(190, 5%, 65%, 1);
+	--clr-neutral-07: hsla(190, 5%, 60%, 1);
+	--clr-neutral-08: hsla(190, 5%, 55%, 1);
+	--clr-neutral-09: hsla(190, 5%, 50%, 1);
+	--clr-neutral-10: hsla(190, 5%, 45%, 1);
+	--clr-neutral-11: hsla(190, 5%, 40%, 1);
+	--clr-neutral-12: hsla(190, 5%, 35%, 1);
+	--clr-neutral-13: hsla(190, 5%, 30%, 1);
+	--clr-neutral-14: hsla(190, 5%, 25%, 1);
+	--clr-neutral-15: hsla(190, 5%, 20%, 1);
+	--clr-neutral-16: hsla(190, 5%, 15%, 1);
+	--clr-neutral-17: hsla(190, 5%, 10%, 1);
+	--clr-neutral-18: hsla(190, 5%, 05%, 1);
+
+	font-size: 16px;
+  --step--2: clamp(0.69rem, calc(0.66rem + 0.18vw), 0.80rem);
+  --step--1: clamp(0.83rem, calc(0.78rem + 0.29vw), 1.00rem);
+  --step-0:  clamp(1.00rem, calc(0.91rem + 0.43vw), 1.25rem);
+  --step-1:  clamp(1.20rem, calc(1.07rem + 0.63vw), 1.56rem);
+  --step-2:  clamp(1.44rem, calc(1.26rem + 0.89vw), 1.95rem);
+  --step-3:  clamp(1.73rem, calc(1.48rem + 1.24vw), 2.44rem);
+  --step-4:  clamp(2.07rem, calc(1.73rem + 1.70vw), 3.05rem);
+  --step-5:  clamp(2.49rem, calc(2.03rem + 2.31vw), 3.82rem);
+  --step-6:  clamp(2.99rem, calc(2.37rem + 3.10vw), 4.77rem);
+
+	--mode-svg-url: url('./assets/svg/PulpOn.svg');
+	--lang-svg-url: url('./assets/svg/globe-light.svg');
+	--home-background: no-repeat scroll right bottom / cover padding-box border-box url('./assets/images/road-light.jpg') transparent;
+	--background-clr-0: var(--clr-blue-02);
+	--background-clr-1: var(--clr-blue-14);
+	--foreground-clr-0: var(--clr-blue-04);
+
+	--border-clr-0: var(--clr-blue-02);
+	--shadow-clr-0: var(--clr-neutral-09);
+
+	--ico-stroke-clr: var(--clr-neutral-16);
+	--car-body-clr: var(--clr-red-10);
+	--car-hat-clr: var(--clr-neutral-14);
+	--car-light-clr: var(--foreground-clr-0);
+	--car-window-clr: var(--foreground-clr-0);
+
+	--globe-land-clr:var(--clr-green-09);
+	--globe-lines-clr:var(--clr-blue-16);
+	--globe-water-clr: var(--clr-blue-02);
+
+	--ico-mode-clr: var(--clr-yellow-03);
+	--logo-font-clr: var(--clr-yellow-02);
+}
+
+[data-theme='dark'] {
+
+	--mode-svg-url: url('./assets/svg/PulpOff.svg');
+	--lang-svg-url: url('./assets/svg/globe-dark.svg');
+	--home-background: no-repeat scroll left bottom / cover padding-box border-box url('./assets/images/road-dark.jpg') transparent;
+	--background-clr-0: var(--clr-blue-16);
+	--foreground-clr-0: var(--clr-neutral-03);
+
+	--car-body-clr: var(--clr-red-07);
+	--car-hat-clr: var(--clr-neutral-11);
+	--car-light-clr: var(--clr-yellow-07);
+	--car-window-clr: var(--clr-yellow-02);
+
+	--globe-land-clr:var(--clr-green-05);
+	--globe-lines-clr:var(--clr-blue-18);
+	--globe-water-clr: var(--clr-blue-16);
+
+	--ico-mode-clr: var(--car-light-clr);
+	--logo-font-clr: var(--clr-yellow-09);
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+}
+
+#app {
+	background: var(--home-background);
+	background-color: var(--background-0);
+	height: 100%;
+	display: grid;
+	grid-template-rows: 60px 1fr 50px;
+	transition: all 0.5s;
+}
+
+#app * {
+	transition: all 0.5s;
+}
+
+/* @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+ 
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+ 
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+ 
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+ 
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+ 
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+ 
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+ 
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+ 
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+} */

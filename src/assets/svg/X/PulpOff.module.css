@@ -1,0 +1,30 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon > svg {
+  stroke: var(--ico-stroke-clr);
+  stroke-width: 0.2;
+}
+
+/* Base */
+.icon > svg > path:nth-of-type(1) {
+  fill: var(--car-hat-clr);
+}
+
+/* Bubble */
+.icon > svg > path:nth-of-type(2) {
+  fill: var(--car-hat-clr);
+}
+
+/* Moon */
+.icon > svg > path:nth-of-type(3) {
+  fill: var(--ico-mode-clr);
+}
+
+/* Star */
+.icon > svg > path:nth-of-type(4) {
+  fill: var(--ico-mode-clr);
+}

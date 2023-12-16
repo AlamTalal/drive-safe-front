@@ -1,0 +1,58 @@
+.switcher {
+  height: 34px;
+  border-radius: 50%;
+  background-image: var(--lang-svg-url);
+  background-size: contain;
+}
+
+.switcher > button {
+  height: inherit;
+  width: 34px;
+}
+
+.switcher > button > h2 {
+  width: inherit;
+  font-family: 'RacingSansOne';
+  font-size: var(--step-1);
+  line-height: 34px;
+  text-transform: capitalize;
+  color: var(--logo-font-clr);
+  text-align: center;
+}
+
+.dropDown {
+  min-width: 32px !important;
+  margin-block-start: 8px;
+  border-radius: 25px !important;
+  border: 1px solid var(--border-clr-0);
+  background-color: var(--background-clr-1) !important;
+  box-shadow: 0px 0px 6px var(--shadow-clr-0) !important;;
+}
+
+.dropDown > div {
+  display: flex;
+  border-radius: 25px;
+  background-color: var(--background-clr-0);
+}
+
+.dropDown > div > div {
+  display: flex;
+  padding: 2px;
+  border-radius: 25px;
+}
+
+.dropDown button {
+  padding: 6px;
+  font-family: 'RacingSansOne';
+  font-size: var(--step-0);
+  text-transform: capitalize;
+  color: var(--logo-font-clr);
+  border-radius: 50%;
+}
+
+.dropDown button:hover {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  /* background-image: linear-gradient(120deg, hsla(140, 50%, 70%, 0.5) 0%, var(--border-clr-0) 100%); */
+  /* background-image: linear-gradient(to top, #37ecba 0%, hsla(190, 55%, 85%, 1) 100%); */
+  /* hsla(140, 50%, 65%, 1), hsla(190, 55%, 85%, 1) */
+}

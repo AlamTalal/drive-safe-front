@@ -1,0 +1,15 @@
+.modeSwitcher {
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--background-clr-0);
+}
+
+.modeSwitcher > button {
+  padding: 4px;
+}
+
+.modeSwitcher > button > div {
+  width: 26px;
+  height: 26px;
+  background-image: var(--mode-svg-url);
+}

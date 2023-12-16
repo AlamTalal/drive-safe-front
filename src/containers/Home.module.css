@@ -1,0 +1,324 @@
+/* 
+ * Photo by <a href="https://unsplash.com/@hb5__?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Holden Baxter</a> on <a href="https://unsplash.com/photos/oxQ0egaQMfU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+ */
+/* 
+ * background: <repeat> <attachment>  <position-x> <position-y> /
+ * <size-width> <size-height>  <origin>    <clip>   <image>  <color>;
+ * background:   repeat   scroll      0%      0%    /
+ *    auto     auto   padding-box  border-box  none  transparent;
+ */
+
+/* .home {
+	// the following two properties pull the element up by 110px
+	height: calc(100% - 110px);
+	display: grid;
+} */
+
+.home {
+	/* height: calc(100% - 110px); */
+	display: grid;
+	grid-template-columns: 2fr minmax(0px, 1fr);
+	grid-template-rows: min-content;
+	align-content: end;
+}
+
+.home > div {
+	display: grid;
+	grid-template-columns: minmax(0px, 1fr) 1fr 1fr;
+	width: fit-content;
+	position: relative;
+	isolation: isolate;
+	margin-block-end: clamp(1rem, 4vw, 6rem);
+}
+
+.home > div:: {
+	content: '';
+	position: absolute;
+	inset: 0px;
+	left: -50vw;
+	z-index: -1;
+	transform: skewX(-12deg);
+	background-color: hsla(190, 55%, 7%, 0.5);
+}
+
+.home > div > div:first-child {
+	grid-column: 2/3;
+	padding: 1rem;
+}
+
+.home > div > div:first-child > svg {
+	--car-size: clamp(240px, 24vmax, 400px);
+	width	: var(--car-size);
+	height: var(--car-size);
+}
+
+.home > div > div:last-child {
+	grid-column: 3/4;
+	min-width: max-content;
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr;
+	padding-block: 1rem;
+	padding-inline-start: 4rem;
+	padding-inline-end: 2rem;
+}
+
+.home > div > div:last-child::before {
+	content: '';
+	position: absolute;
+	/* inset: max(-2vw, -8rem); */
+	inset: 0;
+	left: 0;
+	z-index: -1;
+	transform: skewX(-12deg);
+	background-color: hsla(190, 55%, 7%, 0.5);
+}
+
+.home > div > div:last-child > h1 {
+	align-self: center;
+	font-family: 'RacingSansOne';
+	font-style: italic;
+	font-weight: 600;
+  font-size: var(--step-6);
+  color: var(--logo-font-clr);
+}
+
+.home > div > div:last-child > h2 {
+	font-family: 'ShantellSans';
+	font-style: italic;
+	font-weight: 500;
+  font-size: var(--step-3);
+  color: var(--foreground-clr-0);
+	margin-inline-start: -1rem;
+}
+
+.home > div > div:last-child > button {
+	align-self: start;
+	width: fit-content;
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-inline-start: -1.5rem;
+	padding-block: 0.2rem;
+	padding-inline: 1rem;
+	font-family: 'ShantellSans';
+  font-size: var(--step-1);
+  color: var(--logo-font-clr);
+}
+
+.home > div > div:last-child > button::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 5px;
+	transform: skewX(-12deg);
+	border: 1px solid var(--logo-font-clr);
+}
+
+.home > div > div:last-child > button > svg {
+	width: 2rem;
+	height: 2rem;
+}
+
+@media (max-width: 900px) {
+
+	.home > div {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	.home > div > div:first-child {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+
+	.home > div > div:last-child {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+	/* .home > div > div:last-child::before {
+		left: -50vw
+	} */
+}
+
+/* #app > div.fluid > div:last-child {
+	position: absolute;
+  bottom: max(60px, 6vmax);
+	left: max(50px, 3vmax);
+}
+
+@media (max-aspect-ratio: 3/2) {
+	body {
+		background-color: var(--clr-blue-16);
+	}
+}
+
+@media (min-aspect-ratio: 3/2) {
+	body {
+		background-color: var(--clr-blue-02);
+	}
+}
+
+#app > div.fluid {
+	display: flex;
+}
+
+@media (max-width: 600px) {
+	#app > div.fluid {
+		display: block;
+	}
+} 
+
+#app > div.fluid > div:first-child {
+	background-image: url(./assets/svg/quote-back.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	width	: clamp(400px, 40vmax, 900px);
+	height: clamp(400px, 40vmax, 900px);
+  bottom: min(90px, 1vmax);
+	bottom: 3vmax;
+	left: min(600px, 33vmax);
+}
+
+@media (max-width: 600px) {
+	#app > div.fluid > div:first-child {
+		bottom: 33vmax;
+		left: min(600px, 3vmax);
+	}
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// old values
+
+.home {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	margin-block-end: 4rem;
+}
+
+.home > div {
+	display: flex;
+	width: fit-content;
+	position: relative;
+	isolation: isolate;
+}
+
+.home > div::before {
+	content: '';
+	background-color: hsla(190, 55%, 7%, 0.5);
+	position: absolute;
+	inset: 0px;
+	left: -3vw;
+	transform: skewX(-12deg);
+	z-index: -1;
+}
+
+.home > div > div:first-child {
+	padding-block: 1rem;
+	padding-inline-start: 12vw;
+	padding-inline-end: 3vw;
+}
+
+.home > div > div:first-child > svg {
+	--car-size: clamp(240px, 24vmax, 400px);
+	width	: var(--car-size);
+	height: var(--car-size);
+}
+
+.home > div > div:last-child {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	padding-inline-end: 3rem;
+	padding-inline-start: 2rem;
+}
+
+.home > div > div:last-child::before {
+	content: '';
+	background-color: hsla(190, 55%, 7%, 0.5);
+	position: absolute;
+	top: -1vw;
+	bottom: -1vw;
+	right: -2vw;
+	left: 0vw;
+	transform: skewX(-12deg);
+	z-index: -1;
+}
+
+.home > div > div:last-child > h1 {
+	font-family: 'RacingSansOne';
+	font-style: italic;
+	font-weight: 600;
+  font-size: var(--step-6);
+  color: var(--logo-font-clr);
+}
+
+.home > div > div:last-child > h2 {
+	font-family: 'ShantellSans';
+	font-style: italic;
+	font-weight: 500;
+  font-size: var(--step-3);
+  color: var(--foreground-clr-0);
+	margin-inline-start: -0.7vw;
+}
+
+.home > div > div:last-child > button {
+	width: fit-content;
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	margin-inline-start: -1.5vw;
+	margin-block: 1.5rem;
+	padding-block: 0.2rem;
+	padding-inline: 1rem;
+
+	font-family: 'ShantellSans';
+  font-size: var(--step-1);
+  color: var(--logo-font-clr);
+}
+
+.home > div > div:last-child > button::before {
+	content: '';
+	position: absolute;
+	inset: 0px;
+	transform: skewX(-12deg);
+	border: 1px solid var(--logo-font-clr);
+	border-radius: 5px;
+}
+
+.home > div > div:last-child > button > svg {
+	width: 2rem;
+	height: 2rem;
+}
+
+@media (max-width: 900px) {
+	.home > div {
+		display: block;
+	}
+}
+
+
+
+
+
+*/
+
